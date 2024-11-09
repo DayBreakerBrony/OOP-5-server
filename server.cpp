@@ -178,7 +178,7 @@ void Server::slotReadyRead() {
             break;}
         case 7:
             qDebug() << "7:Request to display the polynomial in unexpanded form.";
-            int index; // I want at least some clarity. Let this store the missing index if there is one due to resize.
+            int index;
             index = poly->are_roots_full();
             if (index == -1){
                 poly->set_display_format(1);
