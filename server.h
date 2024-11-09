@@ -2,7 +2,7 @@
 #define SERVER_H
 #include "polynom.h"
 #include "qcoreapplication.h"
-#include "sstream"
+#include <sstream>
 #include <communicator.h>
 #include <QUdpSocket>
 
