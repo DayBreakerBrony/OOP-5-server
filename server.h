@@ -1,26 +1,26 @@
 #ifndef SERVER_H
 #define SERVER_H
-#include <QAbstractSocket>
-#include <QUdpSocket>
 #include "polynom.h"
+#include "qcoreapplication.h"
 #include "sstream"
+#include <../Prac_OOP_5_CLIENT/communicator.h>
+#include <QUdpSocket>
 
-class Server : public QUdpSocket
+class Server : public QCoreApplication
 {
     Q_OBJECT
 public:
-    Server();
+    Server(int, char**);
     ~Server();
 private:
-    void sendToClient(QString str);
-    QUdpSocket *socket;
+    Communicator *comm;
     Polynom *poly;
     /*We store it on server, yes. This way, we can make a default polynomial.
      Also, we have to carry over the amount of the roots polynomial has in
      order to prevent it from displaying when some index in *poly->roots
      is actually blank.*/
 public slots:
-    void slotReadyRead(); // handler of recieved data
+    void handleMessage(QString &message);
 };
 
 #endif // SERVER_H
