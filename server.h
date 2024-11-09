@@ -3,7 +3,7 @@
 #include "polynom.h"
 #include "qcoreapplication.h"
 #include "sstream"
-#include <../Prac_OOP_5_CLIENT/communicator.h>
+#include <communicator.h>
 #include <QUdpSocket>
 
 class Server : public QCoreApplication
